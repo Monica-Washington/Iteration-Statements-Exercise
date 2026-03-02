@@ -65,11 +65,15 @@
         {
             if (number > 0)
             {
-                Console.WriteLine("True");
+                Console.WriteLine("Positive");
+            }
+            else if (number == 0)
+            {
+                Console.WriteLine("Zero");
             }
             else
             {
-                Console.WriteLine("False");
+                Console.WriteLine("Negative");
             }
         }
 
@@ -145,7 +149,7 @@
            //PrintEveryThirdNumber();
            //AreNumbersEqual(2, 5);
            //IsEven(13);
-           //IsPositive(-5);
+           //IsPositive(-7);
            //CanVote();
            //IsInRange(); 
            //DisplayMultiplicationTable(8);
