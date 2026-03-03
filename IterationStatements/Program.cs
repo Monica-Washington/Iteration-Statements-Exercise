@@ -82,24 +82,24 @@
         //    - Returns true if the candidate can vote, false otherwise.
         //    - Hint: Use `int.Parse()` or the safer `int.TryParse()` for extra practice in handling user input.
 
-        public static void CanVote()
+        public static void CanVote(int age)
         {
-            Console.WriteLine("Please give me your age:");
-            var canParse = int.TryParse(Console.ReadLine(), out int userAge);
+            Console.WriteLine($"Please enter your age:");
+            var canParse = int.TryParse(Console.ReadLine(), out age);
 
             while (canParse == false)
             {
-                Console.WriteLine("Please enter a valid age:");
-                canParse = int.TryParse(Console.ReadLine(), out userAge); 
+                Console.WriteLine($"Please enter a valid age:");
+                canParse = int.TryParse(Console.ReadLine(), out age);
             }
 
-            if (userAge >= 18)
+            if (age >= 18)
             {
-                Console.WriteLine($"Congrats, {userAge} is old enough to vote.");
+                Console.WriteLine($"True. You can vote.");
             }
             else
             {
-                Console.WriteLine($"Sorry, {userAge} is not old enough to vote.");
+                Console.WriteLine($"False. You cannot vote.");
             }
         }
 
@@ -108,23 +108,23 @@
         //    - Method Signature: bool IsInRange(int number)
         //    - Returns true if the number is within the range, false otherwise.
 
-        public static void IsInRange()
+        public static void IsInRange(int number)
         {
             Console.WriteLine($"Please give me a number:"); 
-            var canParse = int.TryParse(Console.ReadLine(), out int userNumber);
+            var canParse = int.TryParse(Console.ReadLine(), out number);
             while (!canParse)
             {
                 Console.WriteLine("Please give me a valid number:");
-                canParse = int.TryParse(Console.ReadLine(), out userNumber);
+                canParse = int.TryParse(Console.ReadLine(), out number);
             }
 
-            if (userNumber <= 10 && userNumber >= -10)
+            if (number <= 10 && number >= -10)
             {
-                Console.WriteLine($"{userNumber} is in the ten range.");
+                Console.WriteLine($"True, {number} is in the ten range.");
             }
             else
             {
-                Console.WriteLine($"{userNumber} is not in the ten range.");
+                Console.WriteLine($"False, {number} is not in the ten range.");
             }
         }
         
@@ -150,8 +150,8 @@
            //AreNumbersEqual(2, 5);
            //IsEven(13);
            //IsPositive(-7);
-           //CanVote();
-           //IsInRange(); 
+           //CanVote(18);
+           //IsInRange(3); 
            //DisplayMultiplicationTable(8);
         }
     }
