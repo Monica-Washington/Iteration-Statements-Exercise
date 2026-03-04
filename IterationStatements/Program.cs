@@ -82,12 +82,12 @@
         //    - Returns true if the candidate can vote, false otherwise.
         //    - Hint: Use `int.Parse()` or the safer `int.TryParse()` for extra practice in handling user input.
 
-        public static void CanVote(int age)
+        public static bool CanVote(int age)
         {
             Console.WriteLine($"Please enter your age:");
             var canParse = int.TryParse(Console.ReadLine(), out age);
-
-            while (canParse == false)
+           
+            while (!canParse == true)
             {
                 Console.WriteLine($"Please enter a valid age:");
                 canParse = int.TryParse(Console.ReadLine(), out age);
@@ -95,22 +95,24 @@
 
             if (age >= 18)
             {
-                Console.WriteLine($"True. You can vote.");
+                Console.WriteLine($"You can vote.");
             }
             else
             {
-                Console.WriteLine($"False. You cannot vote.");
+                Console.WriteLine($"You cannot vote.");
             }
-        }
+
+            return false;
+        }  
 
         // Heatin' Up Section:
         // 1. Write a method that checks if an integer (provided by the user) is within the range of -10 to 10.
         //    - Method Signature: bool IsInRange(int number)
         //    - Returns true if the number is within the range, false otherwise.
 
-        public static void IsInRange(int number)
+        public static bool IsInRange(int number)
         {
-            Console.WriteLine($"Please give me a number:"); 
+            Console.WriteLine($"Please give me a number within 10 and -10 range:"); 
             var canParse = int.TryParse(Console.ReadLine(), out number);
             while (!canParse)
             {
@@ -120,14 +122,14 @@
 
             if (number <= 10 && number >= -10)
             {
-                Console.WriteLine($"True, {number} is in the ten range.");
+                Console.WriteLine($"{number} is within the range.");
             }
             else
             {
-                Console.WriteLine($"False, {number} is not in the ten range.");
+                Console.WriteLine($"{number} is not within the range.");
             }
+            return false;
         }
-        
         
         // 2. Write a method that displays the multiplication table (from 1 to 12) for a given integer.
         //    - Method Signature: void DisplayMultiplicationTable(int number)
