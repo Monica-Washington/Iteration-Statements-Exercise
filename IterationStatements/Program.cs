@@ -29,7 +29,7 @@
         //    - Method Signature: bool AreNumbersEqual(int num1, int num2)
         //    - Returns true if the numbers are equal, false otherwise.
         
-        public static void AreNumbersEqual(int num1, int num2)
+        public static bool AreNumbersEqual(int num1, int num2)
         {
             if (num1 == num2)
             {
@@ -39,13 +39,15 @@
             {
                 Console.WriteLine($"{num1} and {num2} are different.");
             }
+
+            return false;
         }
                 
         // 4. Write a method that checks if a given number is even or odd.
         //    - Method Signature: bool IsEven(int number)
         //    - Returns true if the number is even, false if odd.
 
-        public static void IsEven(int number)
+        public static bool IsEven(int number)
         {
             if (number % 2 == 0)
             {
@@ -55,13 +57,15 @@
             {
                 Console.WriteLine($"{number} is odd.");
             }
+
+            return false;
         }
 
         // 5. Write a method that checks if a given number is positive or negative.
         //    - Method Signature: bool IsPositive(int number)
         //    - Returns true if the number is positive, false if negative.
 
-        public static void IsPositive(int number)
+        public static bool IsPositive(int number)
         {
             if (number > 0)
             {
@@ -75,6 +79,8 @@
             {
                 Console.WriteLine("Negative");
             }
+
+            return false;
         }
 
         // 6. Write a method that reads the age of a candidate and determines if they are eligible to vote.
@@ -149,9 +155,9 @@
         {
            //PrintNumbers1000(); 
            //PrintEveryThirdNumber();
-           //AreNumbersEqual(2, 5);
-           //IsEven(13);
-           //IsPositive(-7);
+           //AreNumbersEqual(2, 3);
+           //IsEven(3);
+           //IsPositive(-5);
            //CanVote(18);
            //IsInRange(3); 
            //DisplayMultiplicationTable(8);
